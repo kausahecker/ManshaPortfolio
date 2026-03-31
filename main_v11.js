@@ -23,8 +23,8 @@ document.querySelectorAll('.project_row').forEach(row => {
     if (!preview) return;
 
     row.addEventListener('mousemove', (e) => {
-        preview.style.left = (e.clientX - 20) + 'px';
-        preview.style.top  = (e.clientY - 20) + 'px';
+        preview.style.left = (e.clientX + 30) + 'px';
+        preview.style.top  = (e.clientY - 310) + 'px';
     });
 });
 

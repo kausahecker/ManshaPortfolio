@@ -1,5 +1,5 @@
 /* ============================================================
-   MANSHA BHASIN — style.css
+    MANSHA BHASIN - style.css
    ============================================================ */
 
 *, *::before, *::after {
@@ -11,11 +11,7 @@
 :root {
   --black:      #0a0a0a;
   --white:      #ffffff;
-  --off-white:  #e8e8e0;
   --muted:      #888880;
-  --sidebar-bg: #f0ede6;
-
-  --font-nav:     'Space Mono', monospace;
   --font-gothic:  'Century Gothic', 'CenturyGothic', 'AppleGothic', 'Trebuchet MS', sans-serif;
 
   --nav-h:     90px;
@@ -77,20 +73,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.threads {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
-}
-
-.threads-open {
-  opacity: 0; /* Hidden initially */
 }
 
 .hand {
@@ -181,12 +163,6 @@ body {
 }
 
 /* ── LAYOUT & PROJECTS ───────────────────────────────────── */
-.layout {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .perfect-overlap-box {
   position: absolute;
@@ -226,14 +202,14 @@ body {
 
 .project_row {
   flex: 1; 
-  display: grid;
-  grid-template-columns: 4rem 1fr 8rem 14rem;
   align-items: center;
-  gap: 1rem;
-  padding: 0 1rem; 
-  transition: background 0.2s ease;
+  gap: 1rem; 
   cursor: pointer;
   z-index: 11;
+  display: flex !important;
+  align-items: center;
+  position: relative;
+  padding: 0 60px !important;
 }
 
 .project_row:hover {
@@ -309,15 +285,6 @@ body {
   color: var(--muted);
   text-align: center;
   letter-spacing: 0.04em;
-}
-
-.project_row {
-  display: flex !important;
-  align-items: center;
-  position: relative;
-  padding: 0 60px !important;
-  transition: background 0.3s ease;
-  cursor: pointer;
 }
 
 .project_type {
