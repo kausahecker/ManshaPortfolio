@@ -13,8 +13,8 @@
   --white:      #ffffff;
   --muted:      #888880;
   --font-gothic:  'Century Gothic', 'CenturyGothic', 'AppleGothic', 'Trebuchet MS', sans-serif;
-
-  --nav-h:     90px;
+  /* Scale navbar height relative to screen height */
+  --nav-h:     8vh; 
 }
 
 html, body {
@@ -112,7 +112,7 @@ body {
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0 5vw;
   z-index: 100;
   margin-top: 2rem;
 }
@@ -125,13 +125,13 @@ body {
 }
 
 .logo-name {
-  height: 64px;
+  height: 5vh;
   width: auto;
   object-fit: contain;
 }
 
 .person-description {
-  height: 32px;
+  height: 2.5vh;
   width: auto;
   object-fit: contain;
 }
@@ -139,7 +139,7 @@ body {
 .nav_links {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: 2.5vw;
 }
 
 .nav_link {
@@ -150,7 +150,7 @@ body {
 }
 
 .nav-img {
-  height: 14px;
+  height: 1.2vh;
   width: auto;
   object-fit: contain;
   opacity: 0.6;
@@ -169,7 +169,7 @@ body {
   top: 42%; /* Moved up towards fingers */
   left: 0;
   width: 100vw;
-  height: 280px; /* Shorter to only cover fingertip area */
+  height: 35vh; /* Proportional to hand height (85vh) */
   transform: translateY(-50%);
   z-index: 15; /* On top of hands (z-index 10) */
 }
@@ -192,7 +192,6 @@ body {
 
 .project_table {
   position: absolute;
-  inset: 0;
   left: 20vw;
   right: 20vw;
   z-index: 10;
@@ -209,7 +208,7 @@ body {
   display: flex !important;
   align-items: center;
   position: relative;
-  padding: 0 60px !important;
+  padding: 0 4vw !important;
 }
 
 .project_row:hover {
@@ -245,20 +244,20 @@ body {
   align-items: center;
 }
 
-.project_table .project_row .project_num img { height: 26px !important; }
+.project_table .project_row .project_num img { height: 2.2vh !important; }
 
 /* --- YEAR NORMALIZATION --- */
 .project_table .project_row .project_year img[src*="2025"],
 .project_table .project_row .project_year img[src*="2026"],
 .project_table .project_row .project_year img[src*="2024-2026"] { 
-  height: 16px !important; 
+  height: 1.5vh !important; 
 } 
 
 /* --- TYPE NORMALIZATION --- */
-.project_table .project_row .project_type img { height: 24px !important; }
+.project_table .project_row .project_type img { height: 2.2vh !important; }
 
 .project_name {
-  margin-left: 20px;
+  margin-left: 1.5vw;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -271,7 +270,7 @@ body {
 }
 
 .project_table .project_row .project_name img {
-  max-height: 20px !important;
+  height: 2vh !important;
 }
 
 .project_year {
@@ -292,7 +291,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 200px;
+  width: 15vw;
   flex-shrink: 0;
 }
 
