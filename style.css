@@ -1,0 +1,339 @@
+/* ============================================================
+   MANSHA BHASIN — style.css
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black:      #0a0a0a;
+  --white:      #ffffff;
+  --off-white:  #e8e8e0;
+  --muted:      #888880;
+  --sidebar-bg: #f0ede6;
+
+  --font-nav:     'Space Mono', monospace;
+  --font-gothic:  'Century Gothic', 'CenturyGothic', 'AppleGothic', 'Trebuchet MS', sans-serif;
+
+  --nav-h:     90px;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background: var(--black);
+}
+
+body {
+  color: var(--white);
+  font-family: var(--font-gothic);
+  overflow-x: hidden;
+}
+
+/* ── SCROLL ANIMATION WRAPPER ────────────────────────────── */
+.scroll-wrapper {
+  height: 300vh; /* Scroll room */
+  position: relative;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--black);
+}
+
+/* ── HERO ELEMENTS ───────────────────────────────────────── */
+.hero-text {
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(200px, 20vw, 300px);
+  z-index: 20;
+}
+
+.hero-logo {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  z-index: 20;
+}
+
+/* ── HANDS & THREADS ─────────────────────────────────────── */
+.animation-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.threads {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+}
+
+.threads-open {
+  opacity: 0; /* Hidden initially */
+}
+
+.hand {
+  position: absolute;
+  bottom: 0;
+  height: 85vh;
+  width: auto;
+  object-fit: contain;
+  z-index: 10;
+}
+
+.hand-left {
+  left: 50%;
+  margin-left: -5vw; /* Start near center */
+  transform: translateX(-100%);
+}
+
+.hand-right {
+  right: 50%;
+  margin-right: -5vw; /* Start near center */
+  transform: translateX(100%);
+}
+
+/* ── HOME CONTENT (FADES IN) ─────────────────────────────── */
+.home-content {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  opacity: 0; /* Hidden initially */
+  pointer-events: none; /* Make clickable once visible */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAVBAR ──────────────────────────────────────────────── */
+.navbar {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+  z-index: 100;
+  margin-top: 2rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.logo-name {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.person-description {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav_links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav_link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-img {
+  height: 14px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.nav_link:hover .nav-img,
+.nav_link--active .nav-img {
+  opacity: 1;
+}
+
+/* ── LAYOUT & PROJECTS ───────────────────────────────────── */
+.layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.perfect-overlap-box {
+  position: absolute;
+  top: 42%; /* Moved up towards fingers */
+  left: 0;
+  width: 100vw;
+  height: 280px; /* Shorter to only cover fingertip area */
+  transform: translateY(-50%);
+  z-index: 15; /* On top of hands (z-index 10) */
+}
+
+#threads-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12; /* On top of hands (z-index 10) */
+  pointer-events: none;
+}
+
+.thread-path {
+  fill: none;
+  stroke: #6b26c7;
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.project_table {
+  position: absolute;
+  inset: 0;
+  left: 20vw;
+  right: 20vw;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.project_row {
+  flex: 1; 
+  display: grid;
+  grid-template-columns: 4rem 1fr 8rem 14rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem; 
+  transition: background 0.2s ease;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.project_row:hover {
+  background: rgba(17, 17, 17, 0.7);
+}
+
+/* ── PROJECT HOVER PREVIEW ───────────────────────────────── */
+.project_preview {
+  display: none;
+  position: fixed;
+  pointer-events: none;
+  width: 280px;
+  height: auto;
+  max-height: none !important;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  /* no top/right/left here - JS sets them */
+}
+
+.project_row:hover .project_preview {
+  display: block;
+}
+
+.project_divider { display: none; }
+
+/* ── CELLS ───────────────────────────────────────────────── */
+.project_num {
+  width: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.project_table .project_row .project_num img { height: 26px !important; }
+
+/* --- YEAR NORMALIZATION --- */
+.project_table .project_row .project_year img[src*="2025"],
+.project_table .project_row .project_year img[src*="2026"],
+.project_table .project_row .project_year img[src*="2024-2026"] { 
+  height: 16px !important; 
+} 
+
+/* --- TYPE NORMALIZATION --- */
+.project_table .project_row .project_type img { height: 24px !important; }
+
+.project_name {
+  margin-left: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+  max-height: 20px;
+}
+
+.project_table .project_row .project_name img {
+  max-height: 20px !important;
+}
+
+.project_year {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none; /* Let clicks pass through to row */
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.project_row {
+  display: flex !important;
+  align-items: center;
+  position: relative;
+  padding: 0 60px !important;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.project_type {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .project_row {
+    grid-template-columns: 3rem 1fr 5rem;
+  }
+  .project_year { display: none; }
+  .hand { height: 60vh; top: 70%; }
+}
