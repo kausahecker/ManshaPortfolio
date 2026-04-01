@@ -1,7 +1,3 @@
-// --- VERSION 16 LOADED ---
-console.log("--- VERSION 16 LOADED ---");
-
-// Existing Project Routing
 const projectRoutes = {
     "#1": "canvory-patisserie.html",
     "#2": "skin-cycles.html",

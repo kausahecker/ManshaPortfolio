@@ -28,6 +28,9 @@ body {
   color: var(--white);
   font-family: var(--font-gothic);
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── SCROLL ANIMATION WRAPPER ────────────────────────────── */
@@ -300,4 +303,77 @@ body {
   }
   .project_year { display: none; }
   .hand { height: 60vh; top: 70%; }
+}
+
+/* ── ABOUT PAGE ──────────────────────────────────────────── */
+
+.about-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1vh 24vw;
+    gap: 3vh;
+}
+
+/* ── GRID ────────────────────────────────────────────────── */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1vw;
+    align-items: stretch;
+}
+
+/* ── PHOTO ───────────────────────────────────────────────── */
+.about-photo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+}
+
+/* ── TEXT IMAGES ─────────────────────────────────────────── */
+.about-text {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.about-hero-img {
+    width: 120%;
+    max-width: 550px;
+    height: auto;
+}
+
+.about-writing-img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+}
+
+/* ── DIVIDER ─────────────────────────────────────────────── */
+.about-divider {
+    width: 100%;
+    height: 1px;
+    background: #6b26c7;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.about-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.about-footer-img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
 }
