@@ -392,8 +392,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2vh 6vw 40vh;
+    padding: 2vh 6vw 30vh;
     gap: 1vh;
+    margin-top: 30vh;
 }
 
 .pg-title {
@@ -417,8 +418,9 @@ body {
 }
 
 .pg-grid img {
-    max-width: auto; /* Ensure images don't overflow their container */
-    height: 100%;    /* Maintain aspect ratio */
+    height: 100%;
+    flex: 1;
+    min-width: 0;   /* Maintain aspect ratio */
     object-fit: contain;
 }
 
@@ -433,4 +435,56 @@ body {
     width: auto;
     height: auto;
     align-self: center;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.pg-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    background: #6b26c7 url('res/FOOTER DESIGN.png') center/cover no-repeat;
+    padding: 2vh 0 4vh;
+    height: 54vh;
+    overflow: hidden;
+}
+
+.pg-footer-top {
+    margin-bottom: 12vh;
+}
+
+.pg-footer-top img {
+    height: 3vh;
+    width: auto;
+}
+
+.pg-footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0 5vh;
+}
+
+.pg-footer-logo {
+    height: 14vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.pg-footer-links {
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+}
+
+.pg-footer-links img {
+    height: 1.2vh;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.pg-footer-links a:hover img {
+    opacity: 1;
 }
