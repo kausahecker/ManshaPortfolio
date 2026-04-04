@@ -1,0 +1,101 @@
+/* ── PLAYGROUND ──────────────────────────────────────────── */
+.pg-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh 6vw 30vh;
+    gap: 1vh;
+    margin-top: 30vh;
+}
+
+.pg-title {
+    width: clamp(200px, 50vw, 600px);
+    height: auto;
+}
+
+.pg-year {
+    height: 2vh;
+    width: auto;
+}
+
+.pg-grid {
+    display: flex;
+    gap: 1vw;
+    width: 100%; /* Ensure the grid takes full available width */
+    height: auto;
+    justify-content: center;
+    padding: 0 6vw;
+    align-items: flex-start;
+}
+
+.pg-grid img {
+    height: 100%;
+    flex: 1;
+    min-width: 0;   /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+.pg-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+.pg-content > img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    align-self: center;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.pg-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    background: #6b26c7 url('res/FOOTER DESIGN.png') center/cover no-repeat;
+    padding: 2vh 0 4vh;
+    height: 54vh;
+    overflow: hidden;
+}
+
+.pg-footer-top {
+    margin-bottom: 12vh;
+}
+
+.pg-footer-top img {
+    height: 3vh;
+    width: auto;
+}
+
+.pg-footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0 5vh;
+}
+
+.pg-footer-logo {
+    height: 14vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.pg-footer-links {
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+}
+
+.pg-footer-links img {
+    height: 1.2vh;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.pg-footer-links a:hover img {
+    opacity: 1;
+}

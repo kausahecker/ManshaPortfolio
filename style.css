@@ -63,7 +63,7 @@ body {
   bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 140px;
+  width: 120px;
   z-index: 20;
 }
 
@@ -380,7 +380,7 @@ body {
 
 /* ── PLAYGROUND PAGE ─────────────────────────────────────── */
 .playground-page {
-    background: #6b26c7;
+    background: #520094;
 }
 
 .playground-page .navbar {
@@ -392,49 +392,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2vh 6vw 30vh;
+    padding: 2vh 6vw 20vh;
     gap: 1vh;
-    margin-top: 30vh;
+    margin-top: 20vh;
 }
 
 .pg-title {
-    width: clamp(200px, 50vw, 600px);
-    height: auto;
+    height: 6vw;
+    width: auto;
 }
 
 .pg-year {
-    height: 2vh;
+    height: 4vh;
     width: auto;
-}
-
-.pg-grid {
-    display: flex;
-    gap: 1vw;
-    width: 100%; /* Ensure the grid takes full available width */
-    height: auto;
-    justify-content: center;
-    padding: 0 6vw;
-    align-items: flex-start;
-}
-
-.pg-grid img {
-    height: 100%;
-    flex: 1;
-    min-width: 0;   /* Maintain aspect ratio */
-    object-fit: contain;
 }
 
 .pg-content {
-    display: flex;
-    flex-direction: column;
-    gap: 6vh;
-}
-
-.pg-content > img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    align-self: center;
+  display: flex;
+  width: 100%;
+  height: auto;
 }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
